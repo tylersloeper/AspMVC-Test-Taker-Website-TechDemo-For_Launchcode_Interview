@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Final Results!</h1> <br />
+
+<pre>
+Answers correct: @ViewBag.amountcorrect
+Answers wrong:   @ViewBag.amountwrong
+Percentage Correct: @if (ViewBag.amountcorrect != 0 && ViewBag.amountwrong != 0)
+{
+    double percentageright = (ViewBag.amountcorrect / (ViewBag.amountwrong + ViewBag.amountcorrect)) * 100;
+    ViewBag.percentright = percentageright;
+}
+else if (ViewBag.amountcorrect != 0 && ViewBag.amountwrong == 0)
+{
+    ViewBag.percentright = 100;
+}
+else
+{ ViewBag.percentright = 0; }
+@ViewBag.percentright %</pre>
+<br />
+Debugging: Count: @ViewBag.count
+<br /> <br />
+<form action="http://localhost:59990/Quizbank">
+    <input type="submit" value="Return to Quizbank" />
+</form>

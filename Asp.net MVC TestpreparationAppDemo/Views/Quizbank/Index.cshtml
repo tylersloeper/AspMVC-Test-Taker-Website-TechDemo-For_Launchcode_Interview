@@ -1,0 +1,32 @@
+﻿
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Quizbank</h3>
+<br />
+<p>Currently two official quizes are being offered:</p>
+<ol>
+    <li> <a href="http://localhost:59990/Quizbank/TestQuiz">MockExam using Nietzsche Ipsum</a> </li>
+    <li> BCaBA Terms Exam </li>
+</ol>
+
+<br /><br />
+<p>Each assessment is 10 questions long, and pulls randomly from a question bank of 100 questions. This will be the format for all of the assessments.</p>
+<br />
+Additional tests can be accessed at <a href="http://localhost:59990/DualDatabaseTestSchemeTests/AllTests">All Tests</a>. You can either access all custom tests there by clicking "take test", or by using the form below with the Id of your test which can be found there:
+<br /><br />
+<form action="http://localhost:59990/DualDatabaseTestSchemeQuestions/CustomTestPreFormatting" method="get">
+
+    <input type="text" name="searchid" /> Your Test's ID <br />
+    <input type="submit" value="Take your test!" />
+
+</form>
+
+
+
+
+
+
+

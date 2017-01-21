@@ -1,0 +1,52 @@
+﻿@model Asp.net_MVC_TestpreparationAppDemo.Models.DualDatabaseTestSchemeQuestion
+
+@{
+    ViewBag.Title = "CustomTest";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4><em>CustomTest</em></h4>
+
+<h3>Question @ViewBag.count: @Model.QuestionDescription? </h3> <br /><br />
+
+<form action="http://localhost:59990/Quizbank/CustomTestCheckAnswers" method="get">
+
+    <input type="radio" name="answer" value="correct" /> @Model.MultipleChoiceCorrect  <br />
+    <input type="radio" name="answer" value="correct" /> @Model.MultipleChoiceB .<br />
+    <input type="radio" name="answer" value="incorrect" /> @Model.MultipleChoiceC.<br />
+    <input type="radio" name="answer" value="incorrect" /> @Model.MultipleChoiceD.<br />
+    <br /><br />
+    <input type="submit" value="Submit Answer" />
+
+</form>
+
+<br />
+<pre>
+Answers correct: @ViewBag.amountcorrect
+Answers wrong:   @ViewBag.amountwrong
+Percentage Correct: @if(ViewBag.amountcorrect != 0 && ViewBag.amountwrong !=0)
+{
+    double percentageright = (ViewBag.amountcorrect / (ViewBag.amountwrong + ViewBag.amountcorrect)) * 100;
+    ViewBag.percentright = percentageright;
+}
+else if(ViewBag.amountcorrect != 0 && ViewBag.amountwrong == 0)
+{
+    ViewBag.percentright = 100;
+}
+else
+{ ViewBag.percentright = 0; }
+@ViewBag.percentright %</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

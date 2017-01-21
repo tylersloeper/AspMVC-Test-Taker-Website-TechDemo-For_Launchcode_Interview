@@ -1,0 +1,28 @@
+﻿@model Asp.net_MVC_TestpreparationAppDemo.Models.DualDatabaseTestSchemeTest
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<form action="http://localhost:59990/DualDatabaseTestSchemeTests/CreateTestObject" method="get">
+
+    <input type="text" name="Name" value="Blank" /> Name <br />
+    <input type="text" name="Description" value="Blank" /> Desription<br />
+
+
+    <br />
+    <input type="submit" value="Submit a New Test" />
+    <br />
+
+
+</form>
+
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+

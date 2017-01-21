@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "TestQuiz";
+}
+
+<h4><em>TestQuiz: Nietzsche Ipsum</em></h4> 
+
+<h3>Question @ViewBag.count: @ViewBag.mockquestion? </h3> <br /><br />
+
+<form action="http://localhost:59990/Quizbank/checkTestQuiz" method="get">
+
+    <input type="radio" name="answer" value=@ViewBag.choiceA /> @ViewBag.mockansweroptionA.<br />
+    <input type="radio" name="answer" value=@ViewBag.choiceB /> @ViewBag.mockansweroptionB.<br />
+    <input type="radio" name="answer" value=@ViewBag.choiceC /> @ViewBag.mockansweroptionC.<br />
+    <input type="radio" name="answer" value=@ViewBag.choiceD /> @ViewBag.mockansweroptionD.<br />
+    <br /><br />
+    <input type="submit" value="Submit Answer" />
+
+</form>
+
+<br />
+<pre>
+Answers correct: @ViewBag.amountcorrect
+Answers wrong:   @ViewBag.amountwrong
+Percentage Correct: @if(ViewBag.amountcorrect != 0 && ViewBag.amountwrong !=0)
+{
+    double percentageright = (ViewBag.amountcorrect / (ViewBag.amountwrong + ViewBag.amountcorrect)) * 100;
+    ViewBag.percentright = percentageright;
+}
+else if(ViewBag.amountcorrect != 0 && ViewBag.amountwrong == 0)
+{
+    ViewBag.percentright = 100;
+}
+else
+{ ViewBag.percentright = 0; }
+@ViewBag.percentright %</pre>
+
+
+
+
+
+
+
+
+            
+            
+            
+            
+            
