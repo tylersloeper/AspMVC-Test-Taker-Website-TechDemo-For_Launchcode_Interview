@@ -11,10 +11,10 @@
 
 <form action="http://localhost:59990/Quizbank/CustomTestCheckAnswers" method="get">
 
-    <input type="radio" name="answer" value="correct" /> @Model.MultipleChoiceCorrect  <br />
-    <input type="radio" name="answer" value="correct" /> @Model.MultipleChoiceB .<br />
-    <input type="radio" name="answer" value="incorrect" /> @Model.MultipleChoiceC.<br />
-    <input type="radio" name="answer" value="incorrect" /> @Model.MultipleChoiceD.<br />
+    <input type="radio" name="answer" value=@ViewBag.correctincorrectstatusa /> @ViewBag.A. <br />
+    <input type="radio" name="answer" value=@ViewBag.correctincorrectstatusb /> @ViewBag.B.<br />
+    <input type="radio" name="answer" value=@ViewBag.correctincorrectstatusc /> @ViewBag.C.<br />
+    <input type="radio" name="answer" value=@ViewBag.correctincorrectstatusd /> @ViewBag.D.<br />
     <br /><br />
     <input type="submit" value="Submit Answer" />
 

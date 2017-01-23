@@ -215,6 +215,7 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
             return View(Globals.GlobalQuestionList);
         }
 
+        //argument is not being passed to this correctly.
         public ActionResult CustomTestPreFormatting(int? searchid)
         {
             /*steps
@@ -224,6 +225,8 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
              * 4.redirect
              * */
 
+            Globals.GlobalQuestionList = new List<DualDatabaseTestSchemeQuestion>();
+
             var questions = from m in db.DualDatabaseTestSchemeQuestionDataBase
                             select m;
             if (searchid != null)
@@ -231,19 +234,26 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
                 questions = questions.Where(s => s.GroupingId == searchid);
             }
 
-            //new stuff here
-
+            /*Issues:
+             * 1. redirect to this method is not passing the searchid correctly. hence entire
+             * database is being returned instead of filtered. SOLVED: changed htmlaction link to new searchid
+             * instead of new id.
+             * 2. the last question in the database is always being truncated.
+             * for example if there are 5 question in the database, the last one from the group is always
+             * missing from the test. why? SOLVED: count -1 was causing truncates. has been commented out.
+             * */
             var tempQuestionlist = new List<DualDatabaseTestSchemeQuestion>();
             tempQuestionlist = questions.ToList<DualDatabaseTestSchemeQuestion>();
-            Globals.GlobalQuestionList = tempQuestionlist;
+            Globals.GlobalQuestionList = tempQuestionlist; //is this causing issues, or is passing the argument not happening?
 
+
+            //debugging on this methods view
             ViewBag.globals = Globals.GlobalQuestionList;
             ViewBag.count = Globals.GlobalQuestionList.Count();
 
 
-            //return RedirectToAction("CustomTest");
             return RedirectToAction("CustomTest", "Quizbank");
-            //return View();
+
         }
 
         [Authorize(Roles = "canEdit")]
