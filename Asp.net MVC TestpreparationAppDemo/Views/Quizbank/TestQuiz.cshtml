@@ -7,16 +7,17 @@
 
 <h3>Question @ViewBag.count: @ViewBag.mockquestion? </h3> <br /><br />
 
-<form action="http://localhost:59990/Quizbank/checkTestQuiz" method="get">
-
+@using (Html.BeginForm("checkTestQuiz", "Quizbank"))
+{
+<fieldset>
     <input type="radio" name="answer" value=@ViewBag.choiceA /> @ViewBag.mockansweroptionA.<br />
     <input type="radio" name="answer" value=@ViewBag.choiceB /> @ViewBag.mockansweroptionB.<br />
     <input type="radio" name="answer" value=@ViewBag.choiceC /> @ViewBag.mockansweroptionC.<br />
     <input type="radio" name="answer" value=@ViewBag.choiceD /> @ViewBag.mockansweroptionD.<br />
     <br /><br />
     <input type="submit" value="Submit Answer" />
-
-</form>
+</fieldset>
+}
 
 <br />
 <pre>

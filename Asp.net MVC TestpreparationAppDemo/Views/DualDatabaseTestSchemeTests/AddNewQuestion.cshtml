@@ -7,17 +7,21 @@
 <h2>AddNewQuestion</h2>
 
 
-<form action="http://localhost:59990/DualDatabaseTestSchemeQuestions/AddNewQuestionAction" method="get">
 
+<br />
+@using (Html.BeginForm("AddNewQuestionAction", "DualDatabaseTestSchemeQuestions"))
+{
+<fieldset>
     <input type="text" name="id" value=@ViewBag.ID /> <br />
-    <input type="text" name="question"  value="Blank"/> Your Question <br />
-    <input type="text" name="answer"    value="Blank"/> Your Answer<br />
-    <input type="text" name="optionb"   value="Blank"/> Your first other option<br />
-    <input type="text" name="optionc"   value="Blank"/> Your second other option<br />
-    <input type="text" name="optiond"   value="Blank"/> Your third other option<br />
-
+    <input type="text" name="question" value="Blank" /> Your Question <br />
+    <input type="text" name="answer" value="Blank" /> Your Answer<br />
+    <input type="text" name="optionb" value="Blank" /> Your first other option<br />
+    <input type="text" name="optionc" value="Blank" /> Your second other option<br />
+    <input type="text" name="optiond" value="Blank" /> Your third other option<br />
     <br />
     <input type="submit" value="Submit" />
     <br />
+</fieldset>
+}
 
-</form>
+

@@ -9,16 +9,17 @@
 
 <h3>Question @ViewBag.count: @Model.QuestionDescription? </h3> <br /><br />
 
-<form action="http://localhost:59990/Quizbank/CustomTestCheckAnswers" method="get">
-
-    <input type="radio" name="answer" value=@ViewBag.correctincorrectstatusa /> @ViewBag.A. <br />
-    <input type="radio" name="answer" value=@ViewBag.correctincorrectstatusb /> @ViewBag.B.<br />
-    <input type="radio" name="answer" value=@ViewBag.correctincorrectstatusc /> @ViewBag.C.<br />
-    <input type="radio" name="answer" value=@ViewBag.correctincorrectstatusd /> @ViewBag.D.<br />
-    <br /><br />
-    <input type="submit" value="Submit Answer" />
-
-</form>
+@using (Html.BeginForm("CustomTestCheckAnswers", "Quizbank"))
+{
+    <fieldset>
+        <input type="radio" name="answer" value=@ViewBag.correctincorrectstatusa /> @ViewBag.A. <br />
+        <input type="radio" name="answer" value=@ViewBag.correctincorrectstatusb /> @ViewBag.B.<br />
+        <input type="radio" name="answer" value=@ViewBag.correctincorrectstatusc /> @ViewBag.C.<br />
+        <input type="radio" name="answer" value=@ViewBag.correctincorrectstatusd /> @ViewBag.D.<br />
+        <br /><br />
+        <input type="submit" value="Submit Answer" />
+    </fieldset>
+}
 
 <br />
 <pre>

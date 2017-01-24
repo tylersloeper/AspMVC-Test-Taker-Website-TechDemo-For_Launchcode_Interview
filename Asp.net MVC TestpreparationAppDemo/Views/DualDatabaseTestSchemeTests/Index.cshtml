@@ -7,9 +7,12 @@
 
 <h2>Index</h2>
 
-<p>
+@*authorize html buttons by user role*@
+@if (ViewContext.HttpContext.User.IsInRole("canEdit"))
+{
     @Html.ActionLink("Create New", "Create")
-</p>
+}
+
 <table class="table">
     <tr>
         <th>
