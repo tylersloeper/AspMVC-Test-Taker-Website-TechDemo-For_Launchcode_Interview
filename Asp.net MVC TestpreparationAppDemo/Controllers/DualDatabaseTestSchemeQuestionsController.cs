@@ -15,7 +15,7 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
         private DualDatabaseTestSchemeQuestionsDbContext db = new DualDatabaseTestSchemeQuestionsDbContext();
 
         // GET: DualDatabaseTestSchemeQuestions
-        [AllowAnonymous]
+        [Authorize(Roles = "canEdit")]
         public ActionResult Index()
         {
             return View(db.DualDatabaseTestSchemeQuestionDataBase.ToList());
@@ -83,7 +83,7 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "canEdit")]
-        public ActionResult Edit([Bind(Include = "ID,QuestionDescription,MultipleChoiceCorrect,MultipleChoiceB,MultipleChoiceC,MultipleChoiceD,Answerexplanation")] DualDatabaseTestSchemeQuestion dualDatabaseTestSchemeQuestion)
+        public ActionResult Edit([Bind(Include = "ID,QuestionDescription,MultipleChoiceCorrect,MultipleChoiceB,MultipleChoiceC,MultipleChoiceD,Answerexplanation,GroupingId")] DualDatabaseTestSchemeQuestion dualDatabaseTestSchemeQuestion)
         {
             if (ModelState.IsValid)
             {

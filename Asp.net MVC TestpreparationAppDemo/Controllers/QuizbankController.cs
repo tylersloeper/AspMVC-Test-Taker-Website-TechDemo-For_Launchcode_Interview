@@ -212,19 +212,26 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
         public ActionResult CustomTestCheckAnswers(string answer)
         {
 
-            Globals.count = Globals.count + 1;
+            
 
-            if (Globals.count > 10)
+            if(answer == "on" || answer == null)
             {
-                Globals.count = 1;
-                Globals.answerscorrect = 0;
-                Globals.answerswrong = 0;
-                return RedirectToAction("TestQuizFinalResults");
+                return RedirectToAction("errorpage");
             }
+
             if (answer == "correct")
             {
                 Globals.answerscorrect = Globals.answerscorrect + 1d;
                 Globals.delayedanswerscorrect = Globals.answerscorrect;
+                Globals.count = Globals.count + 1;
+
+                if (Globals.count > 10)
+                {
+                    Globals.count = 1;
+                    Globals.answerscorrect = 0;
+                    Globals.answerswrong = 0;
+                    return RedirectToAction("TestQuizFinalResults");
+                }
 
                 return RedirectToAction("CustomTest");
             }
@@ -232,9 +239,24 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
             {
                 Globals.answerswrong = Globals.answerswrong + 1d;
                 Globals.delayedanswerswrong = Globals.answerswrong;
+                Globals.count = Globals.count + 1;
+
+                if (Globals.count > 10)
+                {
+                    Globals.count = 1;
+                    Globals.answerscorrect = 0;
+                    Globals.answerswrong = 0;
+                    return RedirectToAction("TestQuizFinalResults");
+                }
+
                 return RedirectToAction("CustomTest");
             }
 
+            return View();
+        }
+
+        public ActionResult errorpage()
+        {
             return View();
         }
 

@@ -15,7 +15,7 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
         private DualDatabaseTestSchemeTestsDbContext db = new DualDatabaseTestSchemeTestsDbContext();
 
         // GET: DualDatabaseTestSchemeTests
-        [AllowAnonymous]
+        [Authorize(Roles = "canEdit")]
         public ActionResult Index()
         {
             return View(db.DualDatabaseTestSchemeTestDataBase.ToList());
