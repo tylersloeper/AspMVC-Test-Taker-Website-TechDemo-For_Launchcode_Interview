@@ -12,6 +12,7 @@
     <WebStackScaffolding_DbContextTypeFullName>Asp.net_MVC_TestpreparationAppDemo.Models.ApplicationDbContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsViewGenerationSelected>True</WebStackScaffolding_IsViewGenerationSelected>
     <ProjectView>ShowAllFiles</ProjectView>
+    <IISExpressSSLPort>44369</IISExpressSSLPort>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
