@@ -102,34 +102,7 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
 
             return View();
         }
-        /*
-                public ActionResult CustomTestPreFormatting(int? searchid)
-                {
-                    /*steps
-                     * 1. get test id
-                     * 2. use test id to get all related questions from the database
-                     * 3.save related questions to globals list
-                     * 4.redirect
-                     * 
 
-                    var questions = from m in db.DualDatabaseTestSchemeQuestionDataBase
-                                    select m;
-                    if (searchid != null)
-                    {
-                        questions = questions.Where(s => s.GroupingId == searchid);
-                    }
-
-                    //new stuff here
-
-                    var tempQuestionlist = new List<DualDatabaseTestSchemeQuestion>();
-                    tempQuestionlist = questions.ToList<DualDatabaseTestSchemeQuestion>();
-                    Globals.GlobalQuestionList = tempQuestionlist;
-
-                    ViewBag.globals = Globals.GlobalQuestionList;
-
-
-                    return RedirectToAction("CustomTest");
-                }*/
 
         private static Random randomroll = new Random();
         private static Random random = new Random();
@@ -138,17 +111,28 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
         {
             /*steps
              * does not require id since it using data from globals.
-             * 1. input values from one randomly selected item from globals into viewbags or else return the model. 
+             * 1. input values from one randomly selected item from globals (or tempdata) into viewbags or else return the model. 
              * ill try model.
-             * 2. redirect to self and update globals
+             * 2. redirect to self and update globals (or tempdata).
              * */
 
+            //attempting to remove globals using tempdata, because globals not compatible with multiple users.
+            var tempQuestionlist = new List<DualDatabaseTestSchemeQuestion>();
+            tempQuestionlist = TempData["tempQuestionlist"] as List<DualDatabaseTestSchemeQuestion>;
+            //must save data in tempdata again so that it can be used in refresh. leaves on artifact at the end of each test.
+            TempData["tempQuestionlist"] = tempQuestionlist;
+            int count = tempQuestionlist.Count();
+
+            /* Old Code using Globals. Kept in cases it is need for a rollback.
+            //int count = Globals.GlobalQuestionList.Count();  //commented out for temp data.
+            //DualDatabaseTestSchemeQuestion randomquestion = new DualDatabaseTestSchemeQuestion();
+            //randomquestion = Globals.GlobalQuestionList[choose];
+            */
+
             //choose a random question from questionlist
-            int count = Globals.GlobalQuestionList.Count();
-            //count = count - 1; //is this causing truncating?
             int choose = random.Next(0, count);
             DualDatabaseTestSchemeQuestion randomquestion = new DualDatabaseTestSchemeQuestion();
-            randomquestion = Globals.GlobalQuestionList[choose];
+            randomquestion = tempQuestionlist[choose];
 
             //update globals for the test subwindow
             ViewBag.amountcorrect = Globals.answerscorrect;
