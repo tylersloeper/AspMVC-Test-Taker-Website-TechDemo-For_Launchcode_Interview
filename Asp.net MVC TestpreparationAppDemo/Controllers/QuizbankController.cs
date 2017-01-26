@@ -100,6 +100,22 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
             ViewBag.amountwrong = Globals.delayedanswerswrong;
             ViewBag.count = Globals.count;
 
+            //set up questions so they can be reviewed as correct or incorrect.
+            if(TempData["CorrectorIncorrect"] != null)
+            {
+                var CorrectorIncorrect = TempData["CorrectorIncorrect"] as List<string>;
+                ViewData["CorrectorIncorrect"] = CorrectorIncorrect;
+            }
+
+
+            //list questions taken in the test
+            if (TempData["reviewlist"] != null)
+            {
+            var reviewlist = TempData["reviewlist"] as List<DualDatabaseTestSchemeQuestion>;
+            return View(reviewlist);
+            }
+
+
             return View();
         }
 
@@ -189,6 +205,11 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
                 ViewBag.correctincorrectstatusd = "correct";
             }
 
+            //assign chosen question to review list and push it forward
+            var reviewlist = TempData["reviewlist"] as List<DualDatabaseTestSchemeQuestion>;
+            reviewlist.Add(randomquestion);
+            TempData["reviewlist"] = reviewlist;
+
 
             return View(randomquestion);
         }
@@ -203,11 +224,19 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
                 return RedirectToAction("errorpage");
             }
 
+            //track questions chosen so there can be a review of its status as correct or incorrect.
+            //establish correct or incorrect in tempdata so it can be shown on the finalresults view
+            var CorrectorIncorrect = TempData["CorrectorIncorrect"] as List<string>;
+
+            //for correct
             if (answer == "correct")
             {
                 Globals.answerscorrect = Globals.answerscorrect + 1d;
                 Globals.delayedanswerscorrect = Globals.answerscorrect;
                 Globals.count = Globals.count + 1;
+
+                CorrectorIncorrect.Add("Correct");
+                TempData["CorrectorIncorrect"] = CorrectorIncorrect;
 
                 if (Globals.count > 10)
                 {
@@ -219,11 +248,15 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
 
                 return RedirectToAction("CustomTest");
             }
+            //for incorrect
             if (answer == "incorrect")
             {
                 Globals.answerswrong = Globals.answerswrong + 1d;
                 Globals.delayedanswerswrong = Globals.answerswrong;
                 Globals.count = Globals.count + 1;
+
+                CorrectorIncorrect.Add("Incorrect");
+                TempData["CorrectorIncorrect"] = CorrectorIncorrect;
 
                 if (Globals.count > 10)
                 {

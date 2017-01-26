@@ -243,6 +243,13 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
 
             TempData["tempQuestionlist"] = tempQuestionlist;
 
+            //create a tempdata list to show answers in the final results page
+            var reviewlist = new List<DualDatabaseTestSchemeQuestion>();
+            TempData["reviewlist"] = reviewlist;
+            //create a tempdata list to track correct or incorrect answers.
+            var CorrectorIncorrect = new List<string>();
+            TempData["CorrectorIncorrect"] = CorrectorIncorrect;
+
             //debugging on this methods view
             ViewBag.globals = Globals.GlobalQuestionList;
             ViewBag.count = Globals.GlobalQuestionList.Count();
