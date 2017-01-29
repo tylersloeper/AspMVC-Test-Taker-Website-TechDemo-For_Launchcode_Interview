@@ -9,7 +9,7 @@
 <pre>
 Answers correct: @ViewBag.amountcorrect
 Answers wrong:   @ViewBag.amountwrong
-Percentage Correct: @if (ViewBag.amountcorrect != 0 && ViewBag.amountwrong != 0)
+Percentage Correct: @if (ViewBag.amountcorrect != 0 && ViewBag.amountwrong != 0 && ViewBag.amountwrong != null)
 {
     double percentageright = (ViewBag.amountcorrect / (ViewBag.amountwrong + ViewBag.amountcorrect)) * 100;
     ViewBag.percentright = percentageright;
@@ -37,7 +37,7 @@ else
         i = i + 1;
         <strong><em>Question @i: </em>@item.QuestionDescription?</strong><br />
         <em>The Answer: </em>@item.MultipleChoiceCorrect <br />
-        <em>You Answered: </em>@CorrectorIncorrect[i - 1] <br />
+        <em>Your Answered: </em>@CorrectorIncorrect[i - 1] <br />
         <br />
     }
 }

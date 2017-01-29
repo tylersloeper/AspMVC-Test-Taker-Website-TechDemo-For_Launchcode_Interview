@@ -152,35 +152,6 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
             return RedirectToAction("Index");
         }
 
-        /*
-        //this search/filter method works for by string.
-        public ActionResult ViewQuestions(string searchString)
-        {
-            var questions = from m in db.DualDatabaseTestSchemeQuestionDataBase
-                         select m;
-
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                questions = questions.Where(s => s.QuestionDescription.Contains(searchString));
-            }
-
-            return View(questions);
-        }
-        */
-
-        /*    //and this works for filtering by groupingid
-        public ActionResult ViewQuestions(int? searchid)
-        {
-
-            var questions = from m in db.DualDatabaseTestSchemeQuestionDataBase
-                            select m;
-            if (searchid != null)
-            {
-                questions = questions.Where(s => s.GroupingId == searchid);
-            }
-            return View(questions);
-
-        } */
 
         
           //this is my final version to try and put this thing in a list.
@@ -235,12 +206,6 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
             var tempQuestionlist = new List<DualDatabaseTestSchemeQuestion>();
             tempQuestionlist = questions.ToList<DualDatabaseTestSchemeQuestion>();
 
-            /* Globals in this context have been replaced by tempdata.
-            //Globals.GlobalQuestionList = new List<DualDatabaseTestSchemeQuestion>();
-            //Globals.GlobalQuestionList = tempQuestionlist; //commented out to remove globals.
-            //attempting to remove globals using tempdata.
-            */
-
             TempData["tempQuestionlist"] = tempQuestionlist;
 
             //create a tempdata list to show answers in the final results page
@@ -254,6 +219,12 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
             ViewBag.globals = Globals.GlobalQuestionList;
             ViewBag.count = Globals.GlobalQuestionList.Count();
 
+            //attempt to swith question authetication over to temp data
+            double questionscorrect = 0;
+            double questionswrong = 0;
+            TempData["questionscorrect"] = questionscorrect;
+            TempData["questionswrong"] = questionswrong;
+
 
             return RedirectToAction("CustomTest", "Quizbank");
 
@@ -262,7 +233,6 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
         [Authorize(Roles = "canEdit")]
         public ActionResult testnewcode()
         {
-            //return RedirectToAction("Index", "Quizbank", new { id = "89" });
             return RedirectToAction("Index", "Quizbank");
         }
 

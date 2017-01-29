@@ -23,8 +23,14 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Quizbank", "Index", "Quizbank")</li>
-                    <li>@Html.ActionLink("Question Index", "Index", "DualDatabaseTestSchemeQuestions")</li>
-                    <li>@Html.ActionLink("Custom Tests", "Index", "DualDatabaseTestSchemeTests")</li>
+                    @if (ViewContext.HttpContext.User.IsInRole("canEdit"))
+                    {
+                        <li>@Html.ActionLink("Question Index", "Index", "DualDatabaseTestSchemeQuestions")</li>
+                        <li>@Html.ActionLink("Custom Tests", "Index", "DualDatabaseTestSchemeTests")</li>
+
+                    }
+
+
         @* // this is how to add additional buttons to the navbar. in the layout file.
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li> 

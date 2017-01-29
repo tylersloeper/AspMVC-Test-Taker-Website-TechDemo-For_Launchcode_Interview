@@ -96,12 +96,18 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
 
         public ActionResult TestQuizFinalResults()
         {
-            ViewBag.amountcorrect = Globals.delayedanswerscorrect;
-            ViewBag.amountwrong = Globals.delayedanswerswrong;
             ViewBag.count = Globals.count;
 
+            //update scores leaderboard
+            if(TempData["questionscorrect"] != null)
+            {
+                ViewBag.amountcorrect = (double)TempData["questionscorrect"];
+                ViewBag.amountwrong = (double)TempData["questionswrong"];
+            }
+
+
             //set up questions so they can be reviewed as correct or incorrect.
-            if(TempData["CorrectorIncorrect"] != null)
+            if (TempData["CorrectorIncorrect"] != null)
             {
                 var CorrectorIncorrect = TempData["CorrectorIncorrect"] as List<string>;
                 ViewData["CorrectorIncorrect"] = CorrectorIncorrect;
@@ -139,21 +145,19 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
             TempData["tempQuestionlist"] = tempQuestionlist;
             int count = tempQuestionlist.Count();
 
-            /* Old Code using Globals. Kept in cases it is need for a rollback.
-            //int count = Globals.GlobalQuestionList.Count();  //commented out for temp data.
-            //DualDatabaseTestSchemeQuestion randomquestion = new DualDatabaseTestSchemeQuestion();
-            //randomquestion = Globals.GlobalQuestionList[choose];
-            */
 
             //choose a random question from questionlist
             int choose = random.Next(0, count);
             DualDatabaseTestSchemeQuestion randomquestion = new DualDatabaseTestSchemeQuestion();
             randomquestion = tempQuestionlist[choose];
 
-            //update globals for the test subwindow
-            ViewBag.amountcorrect = Globals.answerscorrect;
-            ViewBag.amountwrong = Globals.answerswrong;
-            ViewBag.count = Globals.count;
+            //removing more globals
+            double questionscorrect = (double)TempData["questionscorrect"];
+            double questionswrong = (double)TempData["questionswrong"];
+            ViewBag.amountcorrect = questionscorrect;
+            ViewBag.amountwrong = questionswrong;
+            TempData["questionscorrect"] = questionscorrect;
+            TempData["questionswrong"] = questionswrong;
 
             //scramble arrangement of answers for chosen question but keep track of which is correct.
             ViewBag.correctincorrectstatusa = "incorrect";
@@ -228,12 +232,19 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
             //establish correct or incorrect in tempdata so it can be shown on the finalresults view
             var CorrectorIncorrect = TempData["CorrectorIncorrect"] as List<string>;
 
+            //removing more globals
+            double questionscorrect = (double)TempData["questionscorrect"];
+            double questionswrong = (double)TempData["questionswrong"];
+
             //for correct
             if (answer == "correct")
             {
-                Globals.answerscorrect = Globals.answerscorrect + 1d;
-                Globals.delayedanswerscorrect = Globals.answerscorrect;
                 Globals.count = Globals.count + 1;
+
+                //update leaderboard data
+                questionscorrect = questionscorrect + 1d;
+                TempData["questionscorrect"] = questionscorrect;
+
 
                 CorrectorIncorrect.Add("Correct");
                 TempData["CorrectorIncorrect"] = CorrectorIncorrect;
@@ -251,9 +262,11 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
             //for incorrect
             if (answer == "incorrect")
             {
-                Globals.answerswrong = Globals.answerswrong + 1d;
-                Globals.delayedanswerswrong = Globals.answerswrong;
                 Globals.count = Globals.count + 1;
+
+                //update leaderboard data
+                questionswrong = questionswrong + 1d;
+                TempData["questionswrong"] = questionswrong;
 
                 CorrectorIncorrect.Add("Incorrect");
                 TempData["CorrectorIncorrect"] = CorrectorIncorrect;
