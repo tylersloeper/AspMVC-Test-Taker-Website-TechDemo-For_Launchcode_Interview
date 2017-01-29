@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "AddAnotherQuestion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div align="center">
+    <h3>AddAnotherQuestion?</h3>
+    <br /><br />
+    @using (Html.BeginForm("AddNewQuestion", "DualDatabaseTestSchemeTests"))
+    {
+        <input type="hidden" name="id" value=@ViewBag.id>
+        <input type="submit" value="                    Yes                    " />
+    }
+    <br />
+    @using (Html.BeginForm("Index", "DualDatabaseTestSchemeQuestions"))
+    {
+        <input type="submit" value="                    No                    " />
+    }
+
+</div>
+
+

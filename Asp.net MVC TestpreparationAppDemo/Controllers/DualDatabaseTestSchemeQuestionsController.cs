@@ -135,8 +135,8 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
         public ActionResult AddNewQuestionAction(string id, string question, string answer, string optionb, string optionc, string optiond)
         {
             DualDatabaseTestSchemeQuestion newQuestion = new DualDatabaseTestSchemeQuestion();
-            //int ID = id;
-            int newID = 99;
+            
+            int newID = 0;
             Int32.TryParse(id, out newID);
 
             newQuestion.GroupingId = newID;
@@ -149,7 +149,18 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
             db.DualDatabaseTestSchemeQuestionDataBase.Add(newQuestion);
             db.SaveChanges();
 
-            return RedirectToAction("Index");
+            //pass id to add another question view
+            TempData["id"] = id;
+
+            return RedirectToAction("AddAnotherQuestion");
+        }
+
+        public ActionResult AddAnotherQuestion()
+        {
+    
+            ViewBag.id = (string)TempData["id"];
+
+            return View();
         }
 
 

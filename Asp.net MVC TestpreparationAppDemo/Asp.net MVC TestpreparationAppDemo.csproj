@@ -201,7 +201,6 @@
     <Compile Include="Controllers\DualDatabaseTestSchemeTestsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\MyAssessmentsController.cs" />
     <Compile Include="Controllers\QuizbankController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -323,6 +322,7 @@
     <Content Include="Views\Contacts\Edit.cshtml" />
     <Content Include="Views\Contacts\Index.cshtml" />
     <Content Include="Views\Quizbank\errorpage.cshtml" />
+    <Content Include="Views\DualDatabaseTestSchemeQuestions\AddAnotherQuestion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
