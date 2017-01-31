@@ -104,6 +104,15 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
                 ViewBag.amountcorrect = (double)TempData["questionscorrect"];
                 ViewBag.amountwrong = (double)TempData["questionswrong"];
             }
+            //remove tempdata artifacts. One is created for count at the end of each test.
+            //may not be necessary since it is reset in pretestformatting. But just to make sure, it is
+            //also removed here. Temdpdata is erased once called.
+            if (TempData["questioncount"] != null)
+            {
+                var DeleteArtifacts = (int)TempData["questioncount"];
+            }
+
+                
 
 
             //set up questions so they can be reviewed as correct or incorrect.
