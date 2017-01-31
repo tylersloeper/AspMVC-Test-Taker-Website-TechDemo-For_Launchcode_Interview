@@ -151,13 +151,18 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
             DualDatabaseTestSchemeQuestion randomquestion = new DualDatabaseTestSchemeQuestion();
             randomquestion = tempQuestionlist[choose];
 
-            //removing more globals
+            //removing more globals; question authentication.
             double questionscorrect = (double)TempData["questionscorrect"];
             double questionswrong = (double)TempData["questionswrong"];
+            int questioncount = (int)TempData["questioncount"];
+            //assign tempdata to variables for cshtml
             ViewBag.amountcorrect = questionscorrect;
             ViewBag.amountwrong = questionswrong;
+            ViewBag.count = questioncount;
+            //reassignment to tempdata as it has been lost by calling it.
             TempData["questionscorrect"] = questionscorrect;
             TempData["questionswrong"] = questionswrong;
+            TempData["questioncount"] = questioncount;
 
             //scramble arrangement of answers for chosen question but keep track of which is correct.
             ViewBag.correctincorrectstatusa = "incorrect";
@@ -235,11 +240,14 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
             //removing more globals
             double questionscorrect = (double)TempData["questionscorrect"];
             double questionswrong = (double)TempData["questionswrong"];
+            int questioncount = (int)TempData["questioncount"];
 
             //for correct
             if (answer == "correct")
             {
-                Globals.count = Globals.count + 1;
+                //Globals.count = Globals.count + 1;
+                questioncount = questioncount + 1;
+                TempData["questioncount"] = questioncount;
 
                 //update leaderboard data
                 questionscorrect = questionscorrect + 1d;
@@ -249,11 +257,11 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
                 CorrectorIncorrect.Add("Correct");
                 TempData["CorrectorIncorrect"] = CorrectorIncorrect;
 
-                if (Globals.count > 10)
+                if (questioncount > 10)
                 {
-                    Globals.count = 1;
-                    Globals.answerscorrect = 0;
-                    Globals.answerswrong = 0;
+                    //Globals.count = 1;
+                    //Globals.answerscorrect = 0;
+                    //Globals.answerswrong = 0;
                     return RedirectToAction("TestQuizFinalResults");
                 }
 
@@ -262,7 +270,9 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
             //for incorrect
             if (answer == "incorrect")
             {
-                Globals.count = Globals.count + 1;
+                //Globals.count = Globals.count + 1;
+                questioncount = questioncount + 1;
+                TempData["questioncount"] = questioncount;
 
                 //update leaderboard data
                 questionswrong = questionswrong + 1d;
@@ -271,11 +281,11 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
                 CorrectorIncorrect.Add("Incorrect");
                 TempData["CorrectorIncorrect"] = CorrectorIncorrect;
 
-                if (Globals.count > 10)
+                if (questioncount > 10)
                 {
-                    Globals.count = 1;
-                    Globals.answerscorrect = 0;
-                    Globals.answerswrong = 0;
+                    //Globals.count = 1;
+                    //Globals.answerscorrect = 0;
+                    //Globals.answerswrong = 0;
                     return RedirectToAction("TestQuizFinalResults");
                 }
 

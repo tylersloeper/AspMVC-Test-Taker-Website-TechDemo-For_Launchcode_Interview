@@ -233,8 +233,10 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
             //attempt to swith question authetication over to temp data
             double questionscorrect = 0;
             double questionswrong = 0;
+            int questioncount = 1;
             TempData["questionscorrect"] = questionscorrect;
             TempData["questionswrong"] = questionswrong;
+            TempData["questioncount"] = questioncount;
 
 
             return RedirectToAction("CustomTest", "Quizbank");
