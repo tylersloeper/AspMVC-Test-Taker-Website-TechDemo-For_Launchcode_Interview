@@ -249,6 +249,23 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
             return RedirectToAction("Index", "Quizbank");
         }
 
+        [Authorize(Roles = "canEdit")]
+        public ActionResult CountQuestionsInTest(int? id)
+        {
+            var questions = from m in db.DualDatabaseTestSchemeQuestionDataBase
+                            select m;
+            if (id != null)
+            {
+                questions = questions.Where(s => s.GroupingId == id);
+            }
+
+            int countquestions = questions.Count<DualDatabaseTestSchemeQuestion>();
+            TempData["countquestions"] = countquestions;
+
+            return RedirectToAction("Details/" + id, "DualDatabaseTestSchemeTests");
+            //return View();
+        }
+
 
     }
 }

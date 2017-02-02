@@ -84,3 +84,5 @@ C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Asp.net MVC Testprep
 C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Asp.net MVC TestpreparationAppDemo\Asp.net MVC TestpreparationAppDemo\obj\Debug\Asp.net MVC TestpreparationAppDemo.csproj.GenerateResource.Cache
 C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Asp.net MVC TestpreparationAppDemo\Asp.net MVC TestpreparationAppDemo\obj\Debug\Asp.net_MVC_TestpreparationAppDemo.Migrations.AddGroupingId1.resources
 C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Asp.net MVC TestpreparationAppDemo\Asp.net MVC TestpreparationAppDemo\obj\Debug\Asp.net_MVC_TestpreparationAppDemo.Migrations.Initial.resources
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Asp.net MVC TestpreparationAppDemo\Asp.net MVC TestpreparationAppDemo\bin\itextsharp.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Asp.net MVC TestpreparationAppDemo\Asp.net MVC TestpreparationAppDemo\bin\itextsharp.xml

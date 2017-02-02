@@ -33,6 +33,17 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
             {
                 return HttpNotFound();
             }
+
+            //count questions
+            ViewBag.countquestions = null;
+            if(TempData["countquestions"] != null)
+            {
+                ViewBag.countquestions = (int)TempData["countquestions"];
+            }
+
+
+
+
             return View(dualDatabaseTestSchemeTest);
         }
 

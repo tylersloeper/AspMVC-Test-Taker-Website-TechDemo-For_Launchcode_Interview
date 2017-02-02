@@ -40,10 +40,10 @@
             @Html.DisplayFor(modelItem => item.ID)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit",        new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details",  new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete",    new { id = item.ID }) |
-            @Html.ActionLink("Add new Question", "AddNewQuestion",    new { id = item.ID })
+            @Html.ActionLink("Test Details", "CountQuestionsInTest", "DualDatabaseTestSchemeQuestions", new { id = item.ID }, null) |
+            @Html.ActionLink("Add new Question", "AddNewQuestion",    new { id = item.ID }) |
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID }) |
         </td>
     </tr>
 }
