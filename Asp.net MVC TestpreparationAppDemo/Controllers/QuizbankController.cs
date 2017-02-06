@@ -309,6 +309,14 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
             return View();
         }
 
+        public ActionResult ShowPDF()
+        {
+            string title = (string)TempData["title"];
+            var UpdatedtempQuestionlist = TempData["UpdatedtempQuestionlist"] as List<DualDatabaseTestSchemeQuestion>;
+            ViewBag.titlefortest = title;
+            return View(UpdatedtempQuestionlist);
+        }
+
 
     }
 }

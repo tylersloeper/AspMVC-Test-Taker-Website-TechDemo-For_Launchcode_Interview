@@ -33,7 +33,11 @@
             </td>
             <td>
         
-                @Html.ActionLink("Take Test", "CustomTestPreFormatting", "DualDatabaseTestSchemeQuestions", new { searchid = item.ID}, null)
+                @Html.ActionLink("Take Test", "CustomTestPreFormatting", "DualDatabaseTestSchemeQuestions", new { searchid = item.ID}, null)  
+            </td>
+            <td>
+
+                @Html.ActionLink("Print Test", "TestPDF", "DualDatabaseTestSchemeQuestions", new { id = item.ID, title = item.Name }, null)
             </td>
         </tr>
     }

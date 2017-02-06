@@ -266,6 +266,73 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
             //return View();
         }
 
+        private static Random randomroll = new Random();
+        private static Random random = new Random();
+        //prints 10 questions with randmozed elements to a page.
+        public ActionResult TestPDF(int? id, string title)
+        {
+            var questions = from m in db.DualDatabaseTestSchemeQuestionDataBase
+                            select m;
+            if (id != null)
+            {
+                questions = questions.Where(s => s.GroupingId == id);
+            }
+
+            //list to contain all filtered questions.
+            var tempQuestionlist = new List<DualDatabaseTestSchemeQuestion>();
+            tempQuestionlist = questions.ToList<DualDatabaseTestSchemeQuestion>();
+            //list containing 10 fully scrambled questions.
+            var UpdatedtempQuestionlist = new List<DualDatabaseTestSchemeQuestion>();
+            int count = tempQuestionlist.Count();
+            //scramble questions and add them to updated list 10 times (10 questions total).
+            for(int m = 0; m<10;m++)
+            { 
+            //create new instance of objects
+            DualDatabaseTestSchemeQuestion randomquestion = new DualDatabaseTestSchemeQuestion();
+            DualDatabaseTestSchemeQuestion tempquestion = new DualDatabaseTestSchemeQuestion();
+
+            //choose a random question from questionlist
+            int randomizeanswers;
+            int choose = random.Next(0, count);
+            randomquestion = tempQuestionlist[choose];
+
+
+            List<string> scrambledanswers = new List<string>();
+            scrambledanswers.Add(randomquestion.MultipleChoiceCorrect);
+            scrambledanswers.Add(randomquestion.MultipleChoiceB);
+            scrambledanswers.Add(randomquestion.MultipleChoiceC);
+            scrambledanswers.Add(randomquestion.MultipleChoiceD);
+
+            //assignanswervalues scrambled to tempquestion from random question.
+            tempquestion.QuestionDescription = randomquestion.QuestionDescription;
+            //for pdf version there is no answer authentication. Position does not correspond to
+            //correctness
+            //positionA
+            randomizeanswers = randomroll.Next(0, 3);
+            tempquestion.MultipleChoiceCorrect = scrambledanswers[randomizeanswers];
+            scrambledanswers.RemoveAt(randomizeanswers);
+            //positionB
+            randomizeanswers = randomroll.Next(0, 2);
+            tempquestion.MultipleChoiceB = scrambledanswers[randomizeanswers];
+            scrambledanswers.RemoveAt(randomizeanswers);
+            //positionC
+            randomizeanswers = randomroll.Next(0, 1);
+            tempquestion.MultipleChoiceC = scrambledanswers[randomizeanswers];
+            scrambledanswers.RemoveAt(randomizeanswers);
+            //positionD
+            tempquestion.MultipleChoiceD = scrambledanswers[0];
+
+            //add modified question to list
+            UpdatedtempQuestionlist.Add(tempquestion);
+            //repeat 10 times
+            }
+
+            TempData["UpdatedtempQuestionlist"] = UpdatedtempQuestionlist;
+            TempData["title"] = title;
+            //return modifed list
+            return RedirectToAction("ShowPDF", "Quizbank");
+        }
+
 
     }
 }

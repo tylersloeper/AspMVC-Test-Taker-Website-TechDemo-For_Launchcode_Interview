@@ -328,6 +328,8 @@
     <Content Include="Views\Quizbank\errorpage.cshtml" />
     <Content Include="Views\DualDatabaseTestSchemeQuestions\AddAnotherQuestion.cshtml" />
     <Content Include="Views\DualDatabaseTestSchemeQuestions\CountQuestionsInTest.cshtml" />
+    <Content Include="Views\Quizbank\ShowPDF.cshtml" />
+    <Content Include="Views\DualDatabaseTestSchemeQuestions\TestPDF.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

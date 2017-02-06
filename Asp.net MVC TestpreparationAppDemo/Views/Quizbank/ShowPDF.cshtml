@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Asp.net_MVC_TestpreparationAppDemo.Models.DualDatabaseTestSchemeQuestion>
+
+@{
+    ViewBag.Title = "ShowPDF";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h6>Test for Printing</h6> <br />
+<h2><em>@ViewBag.titlefortest</em></h2><br />
+
+    @{
+        int i = 0;
+        foreach (var item in Model)
+        {
+            i = i + 1;
+            <em>--------------------------------</em><br />
+            <strong><em>Question @i: </em>@item.QuestionDescription?</strong><br />
+            <em>A. </em>@item.MultipleChoiceCorrect <br />
+            <em>B. </em>@item.MultipleChoiceB <br />
+            <em>C. </em>@item.MultipleChoiceC <br />
+            <em>D. </em>@item.MultipleChoiceD <br />
+            <br />
+
+
+        }
+
+
+    }
