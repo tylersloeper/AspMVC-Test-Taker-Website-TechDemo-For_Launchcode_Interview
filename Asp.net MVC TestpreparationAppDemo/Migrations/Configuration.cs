@@ -21,8 +21,9 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Migrations
             IdentityResult ir;
             var rm = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
             ir = rm.Create(new IdentityRole("canEdit"));
+            ir = rm.Create(new IdentityRole("CanManageUsers"));
             var um = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
-            var user = new ApplicationUser(){UserName = "MyAdmin@codingisfun.com",};
+            var user = new ApplicationUser(){UserName = "MySuperAdmin@codingisfun.com",};
 
             //create new user with username and password using usermanager and add to app dbcontext
             ir = um.Create(user, "Mypassword1!");
@@ -30,6 +31,7 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Migrations
                 return ir.Succeeded;
 
             ir = um.AddToRole(user.Id, "canEdit");
+            ir = um.AddToRole(user.Id, "CanManageUsers");
             return ir.Succeeded;
         }
 

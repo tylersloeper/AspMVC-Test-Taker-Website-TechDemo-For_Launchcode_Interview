@@ -5,11 +5,12 @@
 }
 
 <h2>User Management</h2><br />
-Currently Admin can create other admins by clicking on this link: @Html.ActionLink("Register New Admin", "RegisterAdmin", "Account") <br />
-Admins created currently have the same priledges as the creating admin. <br /><br />
+There are at this time 4 levels of user authorization: CanManageUsers (SuperAdmin), canEdit (Admin), User, and Anonymous. <br />
+Currently SuperAdmin (the CanUserManage role) can create other admins of the canEdit level (admin) by clicking on this link: @Html.ActionLink("Register New canEdit Admin", "RegisterAdmin", "Account") <br />
+<br /><br />
 
 Future Updates will: <br />
-1. Limit the CanEdit role (admin) to a CanUserManage role (superadmin). <br />
+1. <strong>(Completed)</strong> Limit the CanEdit role (admin) to a CanUserManage role (superadmin). <br />
 2. Allow super admin to delete any user <br />
 3. List all users in this index.
             

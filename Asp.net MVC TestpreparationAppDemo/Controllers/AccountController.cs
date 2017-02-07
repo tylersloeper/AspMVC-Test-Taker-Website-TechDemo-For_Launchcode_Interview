@@ -180,7 +180,7 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
 
 
         // GET: /Account/RegisterAdmin
-        [Authorize(Roles = "canEdit")]
+        [Authorize(Roles = "CanManageUsers")]
         public ActionResult RegisterAdmin()
         {
             return View();
@@ -189,7 +189,7 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
         //
         // POST: /Account/RegisterAdmin
         [HttpPost]
-        [Authorize(Roles = "canEdit")]
+        [Authorize(Roles = "CanManageUsers")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> RegisterAdmin(RegisterViewModel model)
         {
@@ -218,7 +218,7 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
         }
 
 
-
+        [Authorize(Roles = "CanManageUsers")]
         public ActionResult Index()
         {
             return View();
