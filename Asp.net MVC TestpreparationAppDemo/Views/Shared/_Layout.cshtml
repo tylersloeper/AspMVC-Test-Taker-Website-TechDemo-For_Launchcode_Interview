@@ -36,6 +36,17 @@
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li> 
         *@
                 </ul>
+
+
+                <ul class="nav navbar-nav">
+                    @if (ViewContext.HttpContext.User.IsInRole("canEdit"))
+                    {
+                        <li>@Html.ActionLink("Manage Users", "Index", "Account")</li>
+                        
+
+                    }
+                </ul>
+
                 @Html.Partial("_LoginPartial")
             </div>
         </div>

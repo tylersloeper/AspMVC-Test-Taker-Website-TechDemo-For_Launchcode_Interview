@@ -1,0 +1,23 @@
+﻿
+
+
+
+@model IEnumerable<MembershipUser>
+
+@* @model MembershipUserCollection  *@ 
+
+@{
+    ViewBag.Title = "ListUsers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ListUsers</h2> <br />
+
+@foreach (MembershipUser user in Model)
+{
+    <p>
+        @user.UserName
+        <br />
+
+    </p>
+}

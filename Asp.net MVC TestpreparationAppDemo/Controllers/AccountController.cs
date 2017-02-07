@@ -9,6 +9,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Asp.net_MVC_TestpreparationAppDemo.Models;
+using System.Web.Security;
+using System.Collections.Generic;
 
 namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
 {
@@ -155,6 +157,7 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    //await UserManager.AddToRoleAsync(user.Id, "canEdit"); //adds admin to all registering users.
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
@@ -171,6 +174,59 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
             // If we got this far, something failed, redisplay form
             return View(model);
         }
+
+
+
+
+
+        // GET: /Account/RegisterAdmin
+        [Authorize(Roles = "canEdit")]
+        public ActionResult RegisterAdmin()
+        {
+            return View();
+        }
+
+        //
+        // POST: /Account/RegisterAdmin
+        [HttpPost]
+        [Authorize(Roles = "canEdit")]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> RegisterAdmin(RegisterViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var result = await UserManager.CreateAsync(user, model.Password);
+                if (result.Succeeded)
+                {
+                    await UserManager.AddToRoleAsync(user.Id, "canEdit"); //adds admin to all registering users.
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
+                    // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
+                    // Send an email with this link
+                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+
+                    return RedirectToAction("Index", "Home");
+                }
+                AddErrors(result);
+            }
+
+            // If we got this far, something failed, redisplay form
+            return View(model);
+        }
+
+
+
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+
+
+
 
         //
         // GET: /Account/ConfirmEmail
@@ -481,5 +537,19 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
             }
         }
         #endregion
+
+        public ActionResult ListUsers()
+        {
+
+            var users = Membership.GetAllUsers();
+
+            var userList = new List<MembershipUser>();
+            foreach (MembershipUser user in users)
+            {
+                userList.Add(user);
+            }
+
+            return View(userList);
+        }
     }
 }

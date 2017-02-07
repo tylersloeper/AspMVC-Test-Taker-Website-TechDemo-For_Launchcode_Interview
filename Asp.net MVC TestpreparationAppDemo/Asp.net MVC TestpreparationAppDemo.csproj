@@ -330,6 +330,10 @@
     <Content Include="Views\DualDatabaseTestSchemeQuestions\CountQuestionsInTest.cshtml" />
     <Content Include="Views\Quizbank\ShowPDF.cshtml" />
     <Content Include="Views\DualDatabaseTestSchemeQuestions\TestPDF.cshtml" />
+    <Content Include="Views\Account\ListUsers.cshtml" />
+    <Content Include="Views\Contacts\ListUsers.cshtml" />
+    <Content Include="Views\Account\RegisterAdmin.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

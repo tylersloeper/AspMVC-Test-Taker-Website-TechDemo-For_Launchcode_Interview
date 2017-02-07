@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Asp.net_MVC_TestpreparationAppDemo.Models;
+using System.Web.Security;
 
 namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
 {
@@ -123,5 +124,20 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult ListUsers()
+        {
+
+            var users = Membership.GetAllUsers();
+
+            var userList = new List<MembershipUser>();
+            foreach (MembershipUser user in users)
+            {
+                userList.Add(user);
+            }
+
+            return View(userList);
+        }
+
     }
 }
