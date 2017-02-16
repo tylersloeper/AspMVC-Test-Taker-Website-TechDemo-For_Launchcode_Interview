@@ -11,6 +11,7 @@ using Microsoft.Owin.Security;
 using Asp.net_MVC_TestpreparationAppDemo.Models;
 using System.Web.Security;
 using System.Collections.Generic;
+using System.Net;
 
 namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
 {
@@ -200,6 +201,7 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
                 if (result.Succeeded)
                 {
                     await UserManager.AddToRoleAsync(user.Id, "canEdit"); //adds admin to all registering users.
+                    //await UserManager.AddToRoleAsync(user.Id, "CanManageUsers");
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
@@ -217,14 +219,74 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
             return View(model);
         }
 
-
+        //private List<ApplicationUser> userlist;
         [Authorize(Roles = "CanManageUsers")]
         public ActionResult Index()
         {
+            List<ApplicationUser> userlist = new List<ApplicationUser>();
+   
+            userlist = UserManager.Users.ToList();
+
+            int count = userlist.Count;
+            ViewBag.count = count;
+
+            return View(userlist);
+        }
+
+        [Authorize(Roles = "CanManageUsers")]
+        public async Task<ActionResult> DeleteUser(string id)
+        {
+
+            ViewBag.id = id;
+            ApplicationUser currentuser = await UserManager.FindByIdAsync(id);
+
+            ViewBag.username = currentuser.UserName;
+
+            //forbid canmanageusers from being deleted
+            var rolesForUser = await UserManager.GetRolesAsync(id);
+            var stringrolesforuser = rolesForUser.ToList();
+            int rolescount = stringrolesforuser.Count;
+            
+            for(int k = 0; k<rolescount;k++)
+            {
+                if(stringrolesforuser[k] == "CanManageUsers")
+                {
+                    return RedirectToAction("Forbidden");
+                }
+            }
+               
+            await UserManager.DeleteAsync(currentuser);
+           
+    
+
+            return RedirectToAction("Index");
+   
+        }
+
+        public ActionResult Forbidden()
+        {
+
             return View();
         }
 
+        [Authorize(Roles = "CanManageUsers")]
+        public async Task<ActionResult> UserDetails(string id)
+        {
 
+            ViewBag.id = id;
+            ApplicationUser currentuser = await UserManager.FindByIdAsync(id);
+
+            ViewBag.username = currentuser.UserName;
+
+            var rolesForUser = await UserManager.GetRolesAsync(id);
+            var stringrolesforuser = rolesForUser.ToList();
+
+
+
+
+            return View(stringrolesforuser);
+
+        }
 
 
 
@@ -538,18 +600,6 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
         }
         #endregion
 
-        public ActionResult ListUsers()
-        {
 
-            var users = Membership.GetAllUsers();
-
-            var userList = new List<MembershipUser>();
-            foreach (MembershipUser user in users)
-            {
-                userList.Add(user);
-            }
-
-            return View(userList);
-        }
     }
 }

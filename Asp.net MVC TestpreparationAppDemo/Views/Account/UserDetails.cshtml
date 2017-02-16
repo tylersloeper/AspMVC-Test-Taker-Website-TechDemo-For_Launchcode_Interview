@@ -1,0 +1,22 @@
+﻿@model IEnumerable<string>
+
+@{
+    ViewBag.Title = "UserDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>UserDetails</h2> <br />
+<strong>Id:</strong> @ViewBag.id <br />
+<strong>username:</strong> @ViewBag.username <br /> <br />
+<strong>Roles:</strong>  <br />
+
+@{
+    int i = 0;
+    foreach (var role in Model)
+    {
+        i++;
+        <span><strong>@i.</strong> @role </span><br />
+    }
+
+
+}

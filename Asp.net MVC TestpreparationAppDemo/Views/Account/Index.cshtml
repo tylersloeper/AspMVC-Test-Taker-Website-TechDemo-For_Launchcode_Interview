@@ -1,17 +1,75 @@
-﻿
+﻿@model IEnumerable<Asp.net_MVC_TestpreparationAppDemo.Models.ApplicationUser>
+
+    @{
+        ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <h2>User Management</h2><br />
+
+    There are at this time 4 levels of user authorization: CanManageUsers (SuperAdmin), canEdit (Admin), User, and Anonymous. <br />
+    Currently SuperAdmin (the CanUserManage role) can create other admins of the canEdit level (admin) by clicking on this link: @Html.ActionLink("Register New canEdit Admin", "RegisterAdmin", "Account") <br />
+    <br /><br />
+User Count: @ViewBag.count
+
+
+<br /><br /><br />
+<h3>List of Users:</h3> <br />
+
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    int i = 0;
+
+    <table class="table">
+        <tr>
+            <th>
+                <strong>#</strong>
+            </th>
+            <th>
+                <strong>Username</strong>
+            </th>
+
+            <th>
+               
+            </th>
+            <th>
+                <strong>Options</strong>
+            </th>
+        </tr>
+
+
+
+        @foreach (var user in Model)
+        {
+           
+
+            i++;
+            <tr>
+                <td>
+                    <strong>@i. </strong>
+
+                </td>
+                <td>
+                    @user.UserName
+
+                </td>
+                <td>
+               
+
+                </td>
+
+                <td>
+                    
+                    @Html.ActionLink("Delete", "DeleteUser", new { id = user.Id }) | | | 
+                    @Html.ActionLink("Details", "UserDetails", new { id = user.Id }) 
+                </td>
+
+            </tr>
+        }
+    </table>
+
+
 }
 
-<h2>User Management</h2><br />
-There are at this time 4 levels of user authorization: CanManageUsers (SuperAdmin), canEdit (Admin), User, and Anonymous. <br />
-Currently SuperAdmin (the CanUserManage role) can create other admins of the canEdit level (admin) by clicking on this link: @Html.ActionLink("Register New canEdit Admin", "RegisterAdmin", "Account") <br />
-<br /><br />
 
-Future Updates will: <br />
-1. <strong>(Completed)</strong> Limit the CanEdit role (admin) to a CanUserManage role (superadmin). <br />
-2. Allow super admin to delete any user <br />
-3. List all users in this index.
-            
+
 
