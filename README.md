@@ -18,7 +18,7 @@ Currently as of 2/6/2017 the features are as follows:
 Pending features:
 1. ToPDF option for "print test"
 2. Profile page
-3. Users make their own tests in a user section.
+3. Users (not just admins) make their own tests in a user section.
 
 Other notes:
 Most code is commented for clarity. If you don't understand, I'm sorry I can't help you. This application is for demo purposes for my job search. So unless you are an employer, no support is being offered. 
