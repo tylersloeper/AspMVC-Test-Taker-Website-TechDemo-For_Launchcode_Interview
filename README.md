@@ -1,5 +1,5 @@
 # Custom-Test-Asp.net-MVC-5-Demo-App
-Runs in Asp.net MVC from Visual Studio. A video showcasing some of the features (not all as the video is old) can be found here: https://www.youtube.com/watch?v=Ak5BkZy2V0o
+Runs in Asp.net MVC 5 and made in Visual Studio 2015. A video showcasing some of the features (but not all as the video is older than the final release) can be found here: https://www.youtube.com/watch?v=Ak5BkZy2V0o
 
 TL's Demo Project for Launchcode to show off skills with C#. Is a web app that allows users to make custom tests, with custom questions, and then take the test. Has Authorization, and uses databases.
 Most functions are commented and should make sense.
