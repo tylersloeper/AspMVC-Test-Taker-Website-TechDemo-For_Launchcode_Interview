@@ -86,3 +86,90 @@ C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Asp.net MVC Testprep
 C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Asp.net MVC TestpreparationAppDemo\Asp.net MVC TestpreparationAppDemo\obj\Debug\Asp.net_MVC_TestpreparationAppDemo.Migrations.Initial.resources
 C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Asp.net MVC TestpreparationAppDemo\Asp.net MVC TestpreparationAppDemo\bin\itextsharp.dll
 C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Asp.net MVC TestpreparationAppDemo\Asp.net MVC TestpreparationAppDemo\bin\itextsharp.xml
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\ApplicationInsights.config
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\roslyn\csc.exe
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\roslyn\vbc.exe
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\roslyn\VBCSCompiler.exe
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Asp.net MVC TestpreparationAppDemo.dll.config
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Asp.net MVC TestpreparationAppDemo.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Asp.net MVC TestpreparationAppDemo.pdb
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Antlr3.Runtime.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\EntityFramework.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\EntityFramework.SqlServer.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\itextsharp.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.AI.Web.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.Owin.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.Owin.Security.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Newtonsoft.Json.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Owin.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\System.Web.Helpers.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\System.Web.Mvc.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\System.Web.Optimization.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\System.Web.Razor.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\System.Web.WebPages.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\System.Web.WebPages.Razor.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\WebGrease.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\itextsharp.xml
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.AI.Web.xml
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\System.Web.Helpers.xml
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\System.Web.Mvc.xml
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\System.Web.Optimization.xml
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\System.Web.Razor.xml
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\System.Web.WebPages.xml
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\System.Web.WebPages.Razor.xml
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Antlr3.Runtime.pdb
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Newtonsoft.Json.xml
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\EntityFramework.xml
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\EntityFramework.SqlServer.xml
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.Owin.xml
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.Owin.Security.xml
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\obj\Debug\Asp.net MVC TestpreparationAppDemo.csprojResolveAssemblyReference.cache
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\obj\Debug\Asp.net MVC TestpreparationAppDemo.dll
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\obj\Debug\Asp.net MVC TestpreparationAppDemo.pdb
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\obj\Debug\Asp.net_MVC_TestpreparationAppDemo.Migrations.InitialCreate.resources
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\obj\Debug\Asp.net MVC TestpreparationAppDemo.csproj.GenerateResource.Cache
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\obj\Debug\Asp.net_MVC_TestpreparationAppDemo.Migrations.initial.resources

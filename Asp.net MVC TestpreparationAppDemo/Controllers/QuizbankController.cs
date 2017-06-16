@@ -93,7 +93,7 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
 
             return View();
         }
-
+        [AllowAnonymous]
         public ActionResult TestQuizFinalResults()
         {
             ViewBag.count = Globals.count;
@@ -138,6 +138,7 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
         private static Random randomroll = new Random();
         private static Random random = new Random();
 
+        [AllowAnonymous]
         public ActionResult CustomTest()
         {
             /*steps
@@ -232,6 +233,7 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
             return View(randomquestion);
         }
 
+        [AllowAnonymous]
         public ActionResult CustomTestCheckAnswers(string answer)
         {
 
@@ -304,11 +306,13 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult errorpage()
         {
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult ShowPDF()
         {
             string title = (string)TempData["title"];

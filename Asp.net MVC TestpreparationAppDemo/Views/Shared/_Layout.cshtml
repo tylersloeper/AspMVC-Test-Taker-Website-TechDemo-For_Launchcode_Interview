@@ -17,37 +17,21 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Test Preparation Demo App", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Test Land", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Quizbank", "Index", "Quizbank")</li>
-
-
-        @* 
-                  @if (ViewContext.HttpContext.User.IsInRole("canEdit"))
-                    {
-                        <li>@Html.ActionLink("Question Index", "Index", "DualDatabaseTestSchemeQuestions")</li>
-                        <li>@Html.ActionLink("Custom Tests", "Index", "DualDatabaseTestSchemeTests")</li>
-
-                    }        
-            
-            // this is how to add additional buttons to the navbar. in the layout file.
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li> 
-
-
-                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Community Tests", "AllTestsPublic", "DualDatabaseTestSchemeTests")</li>
                     @if (ViewContext.HttpContext.User.IsInRole("canEdit"))
                     {
-                        <li>@Html.ActionLink("Manage Users", "Index", "Account")</li>
-                        
-
+                        <li>@Html.ActionLink("Your Tests", "AllTestsPublic", "DualDatabaseTestSchemeTests")</li>
                     }
-                </ul>
-            [Authorize(Roles = "CanManageUsers")]
-        *@
+                    else
+                    {
+                        <li>@Html.ActionLink("Register for more options!", "Register", "Accounts")</li>
+                    }
+
+
                 </ul>
 
 @if (ViewContext.HttpContext.User.IsInRole("canEdit"))
@@ -83,7 +67,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - TL's Demo Project</p>
+            <p>&copy; @DateTime.Now.Year - Orchid's Behavioral Solutions</p>
         </footer>
     </div>
 

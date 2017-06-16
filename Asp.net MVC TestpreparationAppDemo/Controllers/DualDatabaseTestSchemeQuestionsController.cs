@@ -15,7 +15,7 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
         private DualDatabaseTestSchemeQuestionsDbContext db = new DualDatabaseTestSchemeQuestionsDbContext();
 
         // GET: DualDatabaseTestSchemeQuestions
-        [Authorize(Roles = "canEdit")]
+
         public ActionResult Index()
         {
             return View(db.DualDatabaseTestSchemeQuestionDataBase.ToList());
@@ -37,7 +37,7 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
         }
 
         // GET: DualDatabaseTestSchemeQuestions/Create
-        [Authorize(Roles = "canEdit")]
+
         public ActionResult Create()
         {
             return View();
@@ -62,7 +62,7 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
         }
 
         // GET: DualDatabaseTestSchemeQuestions/Edit/5
-        [Authorize(Roles = "canEdit")]
+
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -82,7 +82,7 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "canEdit")]
+
         public ActionResult Edit([Bind(Include = "ID,QuestionDescription,MultipleChoiceCorrect,MultipleChoiceB,MultipleChoiceC,MultipleChoiceD,Answerexplanation,GroupingId")] DualDatabaseTestSchemeQuestion dualDatabaseTestSchemeQuestion)
         {
             if (ModelState.IsValid)
@@ -131,7 +131,7 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
             base.Dispose(disposing);
         }
 
-        [Authorize(Roles = "canEdit")]
+
         public ActionResult AddNewQuestionAction(string id, string question, string answer, string optionb, string optionc, string optiond)
         {
             DualDatabaseTestSchemeQuestion newQuestion = new DualDatabaseTestSchemeQuestion();
@@ -243,13 +243,13 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
 
         }
 
-        [Authorize(Roles = "canEdit")]
+
         public ActionResult testnewcode()
         {
             return RedirectToAction("Index", "Quizbank");
         }
 
-        [Authorize(Roles = "canEdit")]
+
         public ActionResult CountQuestionsInTest(int? id)
         {
             var questions = from m in db.DualDatabaseTestSchemeQuestionDataBase

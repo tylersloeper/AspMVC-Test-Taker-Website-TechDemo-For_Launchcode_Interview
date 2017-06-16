@@ -209,17 +209,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701170749471_AddGroupingId.cs" />
-    <Compile Include="Migrations\201701170749471_AddGroupingId.Designer.cs">
-      <DependentUpon>201701170749471_AddGroupingId.cs</DependentUpon>
+    <Compile Include="Migrations\201701162248564_InitialCreate.cs" />
+    <Compile Include="Migrations\201701162248564_InitialCreate.Designer.cs">
+      <DependentUpon>201701162248564_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701170815315_AddGroupingId1.cs" />
-    <Compile Include="Migrations\201701170815315_AddGroupingId1.Designer.cs">
-      <DependentUpon>201701170815315_AddGroupingId1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201701200722094_Initial.cs" />
-    <Compile Include="Migrations\201701200722094_Initial.Designer.cs">
-      <DependentUpon>201701200722094_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201706162303114_initial.cs" />
+    <Compile Include="Migrations\201706162303114_initial.Designer.cs">
+      <DependentUpon>201706162303114_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -338,6 +334,7 @@
     <Content Include="Views\Account\DeleteUser.cshtml" />
     <Content Include="Views\Account\UserDetails.cshtml" />
     <Content Include="Views\Account\Forbidden.cshtml" />
+    <Content Include="Views\DualDatabaseTestSchemeTests\AllTestsPublic.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -351,14 +348,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201701170749471_AddGroupingId.resx">
-      <DependentUpon>201701170749471_AddGroupingId.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201701162248564_InitialCreate.resx">
+      <DependentUpon>201701162248564_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701170815315_AddGroupingId1.resx">
-      <DependentUpon>201701170815315_AddGroupingId1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701200722094_Initial.resx">
-      <DependentUpon>201701200722094_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706162303114_initial.resx">
+      <DependentUpon>201706162303114_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

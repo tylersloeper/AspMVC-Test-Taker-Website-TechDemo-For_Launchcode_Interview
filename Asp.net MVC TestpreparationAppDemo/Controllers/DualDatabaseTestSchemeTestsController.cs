@@ -15,7 +15,7 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
         private DualDatabaseTestSchemeTestsDbContext db = new DualDatabaseTestSchemeTestsDbContext();
 
         // GET: DualDatabaseTestSchemeTests
-        [Authorize(Roles = "canEdit")]
+
         public ActionResult Index()
         {
             return View(db.DualDatabaseTestSchemeTestDataBase.ToList());
@@ -68,7 +68,7 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "canEdit")]
+
         public ActionResult Edit([Bind(Include = "ID,Name,Description")] DualDatabaseTestSchemeTest dualDatabaseTestSchemeTest)
         {
             if (ModelState.IsValid)
@@ -81,7 +81,7 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
         }
 
         // GET: DualDatabaseTestSchemeTests/Delete/5
-        [Authorize(Roles = "canEdit")]
+
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -118,14 +118,14 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
         }
 
         //new additions
-        [Authorize(Roles = "canEdit")]
+
         public ActionResult Create()
         {
 
             return View();
         }
 
-        [Authorize(Roles = "canEdit")]
+
         public ActionResult CreateTestObject(string Name, String Description)
         {
             //Random random = new Random();
@@ -148,17 +148,25 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
             return RedirectToAction("Index");
         }
 
-        [Authorize(Roles = "canEdit")]
+
         public ActionResult AddNewQuestion(int? id)
         {
             ViewBag.ID = id;
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult AllTests()
         {
             return View(db.DualDatabaseTestSchemeTestDataBase.ToList());
         }
+
+        [AllowAnonymous]
+        public ActionResult AllTestsPublic()
+        {
+            return View(db.DualDatabaseTestSchemeTestDataBase.ToList());
+        }
+
 
     }
 }
