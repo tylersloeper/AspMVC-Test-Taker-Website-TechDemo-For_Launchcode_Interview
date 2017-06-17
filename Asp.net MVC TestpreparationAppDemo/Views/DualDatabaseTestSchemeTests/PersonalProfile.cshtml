@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>PersonalProfile</h2>
+<h2>Your Tests</h2>
 @Html.ActionLink("Create New Test", "Create") <br /><br />
 
 <table class="table">
@@ -47,9 +47,13 @@
 
                     @Html.ActionLink("Take Test", "CustomTestPreFormatting", "DualDatabaseTestSchemeQuestions", new { searchid = item.ID }, null)
                 </td>
+
                 <td>
 
-                    @Html.ActionLink("Print Test", "TestPDF", "DualDatabaseTestSchemeQuestions", new { id = item.ID, title = item.Name }, null)
+                    @Html.ActionLink("Add new Question", "AddNewQuestion", new { id = item.ID }) |
+                    @Html.ActionLink("Test Details", "CountQuestionsInTest", "DualDatabaseTestSchemeQuestions", new { id = item.ID }, null) |
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID }) |
                 </td>
             </tr>
         }

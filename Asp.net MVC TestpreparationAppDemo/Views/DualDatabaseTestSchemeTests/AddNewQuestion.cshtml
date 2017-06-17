@@ -13,11 +13,57 @@
 {
 <fieldset>
     <input type="hidden" name="id" value=@ViewBag.ID /> <br />
-    <input type="text" name="question" value="Blank" /> Your Question  <br />
-    <input type="text" name="answer" value="Blank" /> Your Answer <br />
-    <input type="text" name="optionb" value="Blank" /> Your first other option  <br />
-    <input type="text" name="optionc" value="Blank" /> Your second other option <br />
-    <input type="text" name="optiond" value="Blank" /> Your third other option <br />
+
+    <div class="form-group col-sm-12 col-md-12 col-lg-12">
+        <div class="form-group col-sm-4 col-md-4 col-lg-4">
+            Your Question
+        </div>
+        <div class="form-group col-sm-8 col-md-8 col-lg-8">
+            <textarea id="question" style="width:400px; height:75px; " type="text" name="question"></textarea>
+        </div>
+    </div>
+    <div class="form-group col-sm-12 col-md-12 col-lg-12">
+        <div class="form-group col-sm-4 col-md-4 col-lg-4">
+            Your Answer
+        </div>
+        <div class="form-group col-sm-8 col-md-8 col-lg-8">
+            <textarea id="answer" style="width:400px; height:75px; " type="text" name="answer"></textarea>
+        </div>
+    </div>
+    <div class="form-group col-sm-12 col-md-12 col-lg-12">
+        <div class="form-group col-sm-4 col-md-4 col-lg-4">
+            Your first other option
+        </div>
+        <div class="form-group col-sm-8 col-md-8 col-lg-8">
+            <textarea id="optionb" style="width:400px; height:75px;" type="text" name="optionb"></textarea>
+        </div>
+    </div>
+    <div class="form-group col-sm-12 col-md-12 col-lg-12">
+        <div class="form-group col-sm-4 col-md-4 col-lg-4">
+            Your second other option
+        </div>
+        <div class="form-group col-sm-8 col-md-8 col-lg-8">
+            <textarea id="optionc" style="width:400px; height:75px; " type="text" name="optionc"></textarea>
+        </div>
+    </div>
+    <div class="form-group col-sm-12 col-md-12 col-lg-12">
+        <div class="form-group col-sm-4 col-md-4 col-lg-4">
+            Your third other option
+        </div>
+        <div class="form-group col-sm-8 col-md-8 col-lg-8">
+            <textarea id="question" style="width:400px; height:75px; " type="text" name="optiond"></textarea>
+        </div>
+    </div>
+
+
+        @*
+        <input type="text" name="question" value="Blank" /> Your Question  <br />
+        <input type="text" name="answer" value="Blank" /> Your Answer <br />
+        <input type="text" name="optionb" value="Blank" /> Your first other option  <br />
+        <input type="text" name="optionc" value="Blank" /> Your second other option <br />
+        <input type="text" name="optiond" value="Blank" /> Your third other option <br />
+        *@
+
     <br />
     <input type="submit" value="Submit" />
     <br />

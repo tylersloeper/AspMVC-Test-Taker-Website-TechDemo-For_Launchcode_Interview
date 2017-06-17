@@ -68,14 +68,15 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-
-        public ActionResult Edit([Bind(Include = "ID,Name,Description")] DualDatabaseTestSchemeTest dualDatabaseTestSchemeTest)
+        public ActionResult Edit(string Public, [Bind(Include = "Name,Description,Genre")] DualDatabaseTestSchemeTest dualDatabaseTestSchemeTest)
         {
             if (ModelState.IsValid)
             {
+                dualDatabaseTestSchemeTest.Status = Public;
+                dualDatabaseTestSchemeTest.DateModified = DateTime.Now.ToString();
                 db.Entry(dualDatabaseTestSchemeTest).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("PersonalProfile");
             }
             return View(dualDatabaseTestSchemeTest);
         }
@@ -125,7 +126,30 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(string Public, [Bind(Include = "Name,Description,Genre")] DualDatabaseTestSchemeTest newTest)
+        {
 
+            //Random is no longer necessary
+            //newTest.ID = random.Next(1, 50000);
+            newTest.Owner = System.Web.HttpContext.Current.User.Identity.Name;
+            newTest.DateModified = DateTime.Now.ToString();
+            newTest.Status = Public;
+
+
+
+            db.DualDatabaseTestSchemeTestDataBase.Add(newTest);
+            db.SaveChanges();
+            /*
+            db.DualDatabaseTestSchemeTestDataBase.Attach(newTest);
+            db.Entry(newTest).State = EntityState.Modified;
+            db.SaveChanges();*/
+
+            return RedirectToAction("Index");
+        }
+
+        //legacy function
         public ActionResult CreateTestObject(string Public, [Bind(Include = "Name,Description,Genre")] DualDatabaseTestSchemeTest newTest)
         {
 
@@ -162,6 +186,12 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
 
         [AllowAnonymous]
         public ActionResult AllTestsPublic()
+        {
+            return View(db.DualDatabaseTestSchemeTestDataBase.ToList());
+        }
+
+        [AllowAnonymous]
+        public ActionResult PersonalProfile()
         {
             return View(db.DualDatabaseTestSchemeTestDataBase.ToList());
         }
