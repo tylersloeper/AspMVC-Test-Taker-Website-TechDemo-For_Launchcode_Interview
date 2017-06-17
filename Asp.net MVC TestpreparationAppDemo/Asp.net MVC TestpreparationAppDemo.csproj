@@ -340,6 +340,7 @@
     <Content Include="Views\Account\Forbidden.cshtml" />
     <Content Include="Views\DualDatabaseTestSchemeTests\AllTestsPublic.cshtml" />
     <Content Include="Views\DualDatabaseTestSchemeTests\PersonalProfile.cshtml" />
+    <None Include="Views\DualDatabaseTestSchemeQuestions\PersonalQuestionIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

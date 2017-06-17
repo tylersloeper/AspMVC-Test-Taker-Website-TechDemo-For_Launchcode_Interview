@@ -48,8 +48,8 @@
                     @Html.ActionLink("Take Test", "CustomTestPreFormatting", "DualDatabaseTestSchemeQuestions", new { searchid = item.ID }, null)
                 </td>
                 <td>
+                    @Html.ActionLink("Test Details", "CountQuestionsInTest", "DualDatabaseTestSchemeQuestions", new { id = item.ID }, null) 
 
-                    @Html.ActionLink("Print Test", "TestPDF", "DualDatabaseTestSchemeQuestions", new { id = item.ID, title = item.Name }, null)
                 </td>
             </tr>
         }

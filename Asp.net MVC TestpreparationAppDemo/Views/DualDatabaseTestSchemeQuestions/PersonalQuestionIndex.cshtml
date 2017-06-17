@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Asp.net_MVC_TestpreparationAppDemo.Models.DualDatabaseTestSchemeQuestion>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Questions</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Question
+        </th>
+        <th>
+            Correct Answer
+        </th>
+    
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    if (item.GroupingId == ViewBag.ID)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuestionDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MultipleChoiceCorrect)
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+
+        </tr>
+    }
+
+}
+
+</table>
+
+

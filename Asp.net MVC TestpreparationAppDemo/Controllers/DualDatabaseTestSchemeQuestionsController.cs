@@ -21,6 +21,12 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
             return View(db.DualDatabaseTestSchemeQuestionDataBase.ToList());
         }
 
+        public ActionResult PersonalQuestionIndex(int id)
+        {
+            ViewBag.ID = id;
+            return View(db.DualDatabaseTestSchemeQuestionDataBase.ToList());
+        }
+
         // GET: DualDatabaseTestSchemeQuestions/Details/5
         public ActionResult Details(int? id)
         {

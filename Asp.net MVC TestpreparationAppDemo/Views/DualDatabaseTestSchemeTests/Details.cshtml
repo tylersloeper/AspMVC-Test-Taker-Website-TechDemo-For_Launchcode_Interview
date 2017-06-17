@@ -5,10 +5,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Details for <strong>@Html.DisplayFor(model => model.Name)</strong></h2>
 
 <div>
-    <h4>DualDatabaseTestSchemeTest</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -25,6 +24,14 @@
 
         <dd>
             @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Genre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genre)
         </dd>
         
         <dt>

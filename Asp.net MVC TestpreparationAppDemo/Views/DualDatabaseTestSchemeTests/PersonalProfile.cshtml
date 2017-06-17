@@ -51,8 +51,13 @@
                 <td>
 
                     @Html.ActionLink("Add new Question", "AddNewQuestion", new { id = item.ID }) |
+                    @Html.ActionLink("Edit Questions", "PersonalQuestionIndex", "DualDatabaseTestSchemeQuestions", new { id = item.ID }, null) 
+
+                </td>
+                <td>
+
                     @Html.ActionLink("Test Details", "CountQuestionsInTest", "DualDatabaseTestSchemeQuestions", new { id = item.ID }, null) |
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Edit Test", "Edit", new { id = item.ID }) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.ID }) |
                 </td>
             </tr>
