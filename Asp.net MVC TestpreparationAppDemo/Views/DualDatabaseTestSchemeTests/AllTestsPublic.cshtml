@@ -28,28 +28,32 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Genre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateModified)
-            </td>
-            <td>
-        
-                @Html.ActionLink("Take Test", "CustomTestPreFormatting", "DualDatabaseTestSchemeQuestions", new { searchid = item.ID}, null)  
-            </td>
-            <td>
+        if (item.Status == "True")
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateModified)
+                </td>
+                <td>
 
-                @Html.ActionLink("Print Test", "TestPDF", "DualDatabaseTestSchemeQuestions", new { id = item.ID, title = item.Name }, null)
-            </td>
-        </tr>
+                    @Html.ActionLink("Take Test", "CustomTestPreFormatting", "DualDatabaseTestSchemeQuestions", new { searchid = item.ID }, null)
+                </td>
+                <td>
+
+                    @Html.ActionLink("Print Test", "TestPDF", "DualDatabaseTestSchemeQuestions", new { id = item.ID, title = item.Name }, null)
+                </td>
+            </tr>
+        }
+
     }
 
 </table>

@@ -5,23 +5,80 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create</h2>
+<h2>Create A New Test</h2>
 
-<br />
-@using (Html.BeginForm("CreateTestObject", "DualDatabaseTestSchemeTests"))
+
+@*
+    @using (Html.BeginForm("CreateTestObject", "DualDatabaseTestSchemeTests"))
+    {
+    <fieldset>
+
+        <input type="text" name="Name" value="Blank" /> Name <br />
+        <input type="text" name="Description" value="Blank" /> Desription<br />
+        <input type="text" name="Genre" value="Blank" /> Genre<br />
+        <input type="checkbox" name="Public" value="True" /> Public<br />
+
+
+        <br />
+        <input type="submit" value="Submit a New Test" />
+        <br />
+
+    </fieldset>
+
+    }
+*@
+
+
+@using (Html.BeginForm())
 {
-<fieldset>
-    
-    <input type="text" name="Name" value="Blank" /> Name <br />
-    <input type="text" name="Description" value="Blank" /> Desription<br />
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
 
-    <br />
-    <input type="submit" value="Submit a New Test" />
-    <br />
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
-</fieldset>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
+        <div class="form-group">
+            @Html.LabelFor(model => model.Genre, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Genre, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Genre, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group col-md-12">
+            <div class="col-md-2">
+
+            </div>
+            <div class="col-md-10">
+                <input type="checkbox" name="Public" value="True" /> Public<br />
+            </div>
+        </div>
+
+        <br /><br />
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
 }
 
 
@@ -31,21 +88,3 @@
     @Html.ActionLink("Back to List", "Index")
 </div>
 
-@*an alternative way to do this form. for reference.
-    @using (Html.BeginForm("CreateTestObject", "DualDatabaseTestSchemeTests"))
-    {
-    <fieldset>
-
-        @Html.TextBoxFor(model => model.Name, new { @class = "form_input_field" })
-        @Html.LabelFor(model => model.Name)<br />
-
-        @Html.TextBoxFor(model => model.Description, new { @class = "form_input_field" })
-        @Html.LabelFor(model => model.Description)<br />
-        <br />
-        <input type="submit" value="Submit a New Test" />
-        <br />
-
-    </fieldset>
-
-    }
-*@

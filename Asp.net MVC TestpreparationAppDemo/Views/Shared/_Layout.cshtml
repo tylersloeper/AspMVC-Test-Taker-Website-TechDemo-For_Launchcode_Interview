@@ -24,11 +24,11 @@
                     <li>@Html.ActionLink("Community Tests", "AllTestsPublic", "DualDatabaseTestSchemeTests")</li>
                     @if (ViewContext.HttpContext.User.IsInRole("canEdit"))
                     {
-                        <li>@Html.ActionLink("Your Tests", "AllTestsPublic", "DualDatabaseTestSchemeTests")</li>
+                        <li>@Html.ActionLink("Your Tests", "PersonalProfile", "DualDatabaseTestSchemeTests")</li>
                     }
                     else
                     {
-                        <li>@Html.ActionLink("Register for more options!", "Register", "Accounts")</li>
+                        <li>@Html.ActionLink("Register for more options!", "Register", "Account")</li>
                     }
 
 

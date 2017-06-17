@@ -22,6 +22,10 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Models
         public int GroupingId { get; set; } // to identify who the test belongs to
         public int TimesTaken { get; set; } // sort by popularity
 
+        //second round
+        public string Owner { get; set; } //User ID to more easily identify an owner
+        public string Upvotes { get; set; } //sort by upvotes
+
 
 
 

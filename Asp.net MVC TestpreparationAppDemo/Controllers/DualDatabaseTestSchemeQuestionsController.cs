@@ -333,6 +333,12 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
             return RedirectToAction("ShowPDF", "Quizbank");
         }
 
+        public ActionResult PersonalProfile()
+        {
+            return View();
 
-    }
+        }
+
+
+        }
 }

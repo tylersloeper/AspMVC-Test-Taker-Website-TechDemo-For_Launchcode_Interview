@@ -126,15 +126,14 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
         }
 
 
-        public ActionResult CreateTestObject(string Name, String Description)
+        public ActionResult CreateTestObject(string Public, [Bind(Include = "Name,Description,Genre")] DualDatabaseTestSchemeTest newTest)
         {
-            //Random random = new Random();
-            DualDatabaseTestSchemeTest newTest = new DualDatabaseTestSchemeTest();
 
             //Random is no longer necessary
             //newTest.ID = random.Next(1, 50000);
-            newTest.Name = Name;
-            newTest.Description = Description; //+ " ID: " + newTest.ID;
+            newTest.Owner = System.Web.HttpContext.Current.User.Identity.Name;
+            newTest.DateModified = DateTime.Now.ToString();
+            newTest.Status = Public;
 
 
 

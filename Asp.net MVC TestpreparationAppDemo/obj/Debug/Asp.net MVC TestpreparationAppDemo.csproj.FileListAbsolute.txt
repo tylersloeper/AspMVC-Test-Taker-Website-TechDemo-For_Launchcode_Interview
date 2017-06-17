@@ -173,3 +173,4 @@ C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-A
 C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\obj\Debug\Asp.net_MVC_TestpreparationAppDemo.Migrations.InitialCreate.resources
 C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\obj\Debug\Asp.net MVC TestpreparationAppDemo.csproj.GenerateResource.Cache
 C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\obj\Debug\Asp.net_MVC_TestpreparationAppDemo.Migrations.initial.resources
+C:\Users\Tyler Loeper\Documents\Visual Studio 2015\Projects\Test-Taking-App-in-Asp.net-MVC-For_Launchcode\Asp.net MVC TestpreparationAppDemo\obj\Debug\Asp.net_MVC_TestpreparationAppDemo.Migrations.modify1.resources
