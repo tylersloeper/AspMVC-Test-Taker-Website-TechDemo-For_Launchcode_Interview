@@ -1,7 +1,10 @@
 # Custom-Test-Asp.net-MVC-5-Demo-App
-Runs in Asp.net MVC 5 and made in Visual Studio 2015. A video showcasing some of the features (but not all as the video is older than the final release) can be found here: https://www.youtube.com/watch?v=Ak5BkZy2V0o
 
-TL's Demo Project is work made for Launchcode to show off skills with C#. It ss a web app that allows users to make custom tests, with custom questions, and then take the test. It has Authorization, and uses databases.
+Social media web app using ASP.NET MVC 5 that allows users to create custom quizes online, leave feedback, compete on leaderboards. Users can create questions (and tests) and then take the test themselves, or share creations with other users. The goal of this project is to create an environment to help adult test takers prepare for examinations (MCAT, GRE, SAT, BCBA, etc).
+
+Runs in Asp.net MVC 5 and made in Visual Studio 2015. A video showcasing some of the features (but not all as the video is far older than the final release) can be found here: https://www.youtube.com/watch?v=Ak5BkZy2V0o. Will be putting it up live soon.
+
+This is a work made for Launchcode to show off skills with C#. It is a web app that allows users to make custom tests, with custom questions, and then take the test. It has Authorization, and uses databases.
 Most functions are commented and should make sense.
 
 Currently as of 2/6/2017 the features are as follows:
@@ -15,10 +18,4 @@ Currently as of 2/6/2017 the features are as follows:
 8. Authorization; anonymous, user, and admin
 9. All data is stored in databases
 
-Pending features:
-1. ToPDF option for "print test"
-2. Profile page
-3. Users (not just admins) make their own tests in a user section.
 
-Other notes:
-Most code is commented for clarity. If you don't understand, I'm sorry I can't help you. This application is for demo purposes for my job search. So unless you are an employer, no support is being offered. 
