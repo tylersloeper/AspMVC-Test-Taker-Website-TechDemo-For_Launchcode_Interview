@@ -221,6 +221,10 @@
     <Compile Include="Migrations\201706162331372_modify1.Designer.cs">
       <DependentUpon>201706162331372_modify1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706182108523_custom3.cs" />
+    <Compile Include="Migrations\201706182108523_custom3.Designer.cs">
+      <DependentUpon>201706182108523_custom3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Contact.cs" />
@@ -341,6 +345,7 @@
     <Content Include="Views\DualDatabaseTestSchemeTests\AllTestsPublic.cshtml" />
     <Content Include="Views\DualDatabaseTestSchemeTests\PersonalProfile.cshtml" />
     <None Include="Views\DualDatabaseTestSchemeQuestions\PersonalQuestionIndex.cshtml" />
+    <Content Include="Views\DualDatabaseTestSchemeTests\CreateAdvanced.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -362,6 +367,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706162331372_modify1.resx">
       <DependentUpon>201706162331372_modify1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706182108523_custom3.resx">
+      <DependentUpon>201706182108523_custom3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

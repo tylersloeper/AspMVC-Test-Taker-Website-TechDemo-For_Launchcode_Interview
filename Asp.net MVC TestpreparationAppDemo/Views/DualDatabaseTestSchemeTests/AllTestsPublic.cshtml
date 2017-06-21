@@ -8,6 +8,21 @@
 <h2>Community Tests</h2>
 <em>[Only members can create new tests]</em><br /><br />
 
+@using (Html.BeginForm())
+{
+ 
+ 
+    <div>
+        <strong>Search:</strong>
+        @Html.TextBox("SearchString", null, new { @class = "checkbox" })
+        <input type="submit" value="Search" /> <br />
+    </div>
+
+    
+} <br />
+
+
+
 <table class="table">
     <tr>
         <th>

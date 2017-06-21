@@ -5,7 +5,22 @@
 }
 
 <h2>Your Tests</h2>
-@Html.ActionLink("Create New Test", "Create") <br /><br />
+<br />
+
+<div class="form-group col-sm-12 col-md-12 col-lg-12">
+    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+        @Html.ActionLink("Create Simple Test", "Create") <br />
+        @Html.ActionLink("Create Advanced Test", "CreateAdvanced")
+    </div>
+    <div class="form-group col-sm-4 col-md-4 col-lg-4">
+        [Multiple Choice Only] <br />
+        [Additional Options]
+    </div>
+
+</div>
+
+
+<br /><br />
 
 <table class="table">
     <tr>

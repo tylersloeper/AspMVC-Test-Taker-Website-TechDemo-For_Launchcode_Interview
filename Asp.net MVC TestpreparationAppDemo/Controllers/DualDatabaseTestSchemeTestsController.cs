@@ -149,6 +149,36 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult CreateAdvanced()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateAdvanced(string Public, [Bind(Include = "Name,Description,Genre")] DualDatabaseTestSchemeTest newTest)
+        {
+
+            //Random is no longer necessary
+            //newTest.ID = random.Next(1, 50000);
+            newTest.Owner = System.Web.HttpContext.Current.User.Identity.Name;
+            newTest.DateModified = DateTime.Now.ToString();
+            newTest.Status = Public;
+            newTest.IsAdvanced = true;
+
+
+
+            db.DualDatabaseTestSchemeTestDataBase.Add(newTest);
+            db.SaveChanges();
+            /*
+            db.DualDatabaseTestSchemeTestDataBase.Attach(newTest);
+            db.Entry(newTest).State = EntityState.Modified;
+            db.SaveChanges();*/
+
+            return RedirectToAction("Index");
+        }
+
         //legacy function
         public ActionResult CreateTestObject(string Public, [Bind(Include = "Name,Description,Genre")] DualDatabaseTestSchemeTest newTest)
         {
@@ -185,9 +215,17 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Controllers
         }
 
         [AllowAnonymous]
-        public ActionResult AllTestsPublic()
+        public ActionResult AllTestsPublic(string searchString = "")
         {
-            return View(db.DualDatabaseTestSchemeTestDataBase.ToList());
+            var TestsSelected = from m in db.DualDatabaseTestSchemeTestDataBase select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                TestsSelected = TestsSelected.Where(s => s.Name.Contains(searchString));
+            }
+
+            //return View(db.DualDatabaseTestSchemeTestDataBase.ToList());
+            return View(TestsSelected);
         }
 
         [AllowAnonymous]

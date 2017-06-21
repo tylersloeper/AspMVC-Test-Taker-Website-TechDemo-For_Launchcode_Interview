@@ -26,6 +26,22 @@ namespace Asp.net_MVC_TestpreparationAppDemo.Models
         public string Owner { get; set; } //User ID to more easily identify an owner
         public string Upvotes { get; set; } //sort by upvotes
 
+        //advanced options
+
+        public bool IsAdvanced { get; set; } //to divide tests in function. So that advanced are processed differently from simple
+        public string TestFinishedDefaultMessage { get; set; } //you completed the test, etc.
+
+
+        //I need to add 2 arrays. one of conditions, (how many right)
+        //one array of string. present message if got x right.
+        //use a single string, and use split to divide it into an array when needed. So get the info originally as an array. then when its being saved
+        //fix it up into a single string with a default seperator.
+        //then split the string when it is needed.
+
+        public string MessagesArrayAsSingleString { get; set; }
+        public string AmountCorrectArrayAsSingleString { get; set; }
+        public string AdditionalConditionsArrayAsSingleString { get; set; }
+
 
 
 
